@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.chuong_6.ui.home.HomeFragment"
+        android:label="CHƯƠNG 6"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_mt"
+        android:name="com.example.chuong_6.ui.mt.mtFragment"
+        android:label="Multi-Thread"
+        tools:layout="@layout/fragment_mt" />
+    <fragment
+        android:id="@+id/nav_intent"
+        android:name="com.example.chuong_6.ui.intent.intentFragment"
+        android:label="Intent filter"
+        tools:layout="@layout/fragment_intent" />
+    <fragment
+        android:id="@+id/nav_br"
+        android:name="com.example.chuong_6.ui.br.brFragment"
+        android:label="Broadcast Receiver"
+        tools:layout="@layout/fragment_br" />
+    <fragment
+        android:id="@+id/nav_as"
+        android:name="com.example.chuong_6.ui.as.asFragment"
+        android:label="Android Service"
+        tools:layout="@layout/fragment_as" />
+    <fragment
+        android:id="@+id/nav_wn"
+        android:name="com.example.chuong_6.ui.wn.wnFragment"
+        android:label="Webservice dot Net"
+        tools:layout="@layout/fragment_wn" />
+</navigation>
