@@ -1,5 +1,6 @@
 package com.example.chuong_6;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -54,6 +55,19 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Handle incoming intent
+        handleIncomingIntent(navController);
+    }
+
+    private void handleIncomingIntent(NavController navController) {
+        Intent intent = getIntent();
+        if (intent != null && intent.getAction() != null) {
+            if (Intent.ACTION_VIEW.equals(intent.getAction()) || "com.example.chuong_6.CUSTOM_ACTION".equals(intent.getAction())) {
+                // Navigate to intentFragment for Google URLs or custom action
+                navController.navigate(R.id.nav_intent);
+            }
+        }
     }
 
     @Override
