@@ -1,6 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Thread là một luồng của một chương trình đang chạy. Một chương trình đang chay thường sẽ có 1 luồng chính chủ đạo và có thể tạo ra được nhiều các luồng khác chạy xung quanh để phục vụ cho luồng chính đó. Các luồng này có thể chạy song song với nhau. Mỗi luồng đều có call stack riêng với các phương thức được gọi, tham số và biến địa phương của chúng."
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Các khái niệm chính:"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Main Thread (UI Thread):"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Là luồng chính chịu trách nhiệm xử lý giao diện người dùng (UI), như vẽ giao diện, xử lý sự kiện người dùng (click, scroll)."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Không nên thực hiện các tác vụ nặng trên main thread để tránh làm ứng dụng bị chậm hoặc treo."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Background Thread:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Là các luồng riêng biệt được tạo để xử lý các tác vụ nặng, chẳng hạn như truy cập mạng, xử lý dữ liệu, hoặc tính toán phức tạp."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Các background thread không được phép cập nhật trực tiếp giao diện (UI), mà phải sử dụng cơ chế như Handler, AsyncTask, hoặc runOnUiThread để giao tiếp với main thread."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Các cách triển khai multi-threading trong Android:"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Thread: Lớp cơ bản trong Java để tạo luồng. Phù hợp cho các tác vụ đơn giản, nhưng cần quản lý thủ công."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ AsyncTask (đã deprecated): Một lớp tiện ích để thực hiện tác vụ nền và cập nhật UI, như trong ví dụ trước."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+  Handler và Looper: Cho phép gửi và xử lý thông điệp hoặc tác vụ giữa các luồng."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ ExecutorService: Quản lý một nhóm luồng (thread pool) để thực thi các tác vụ nền."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Kotlin Coroutines (khuyến nghị): Một cách hiện đại, đơn giản hóa việc xử lý đa luồng, đặc biệt khi sử dụng Kotlin."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ RxJava hoặc LiveData: Các thư viện hỗ trợ xử lý bất đồng bộ và quản lý dữ liệu."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Có 2 cách để tạo một lớp thread:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Kế thừa từ lớp:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="public class NewThread extends Thread{ \n
+    public void run() \n
+    {\n
+        print(“Hello”)\n
+    }\n
+}"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="+ Với đối tượng Runnable:"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Thread background = new Thread(new Runnable() {\n
+    public void run() {\n
+        print(“Hello”)\n
+    }\n
+}"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Để chạy được bất kì thread nào thì ta gọi phương thức start();"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="background.start()"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tác dụng của thread trong 1 chương trình:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Các luồng có thể dùng chung tài nguyên của tiến trình để thực hiện các thao tác cần thiết."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Có thể tách các nhiệm vụ của ứng dụng ra thành các công việc nhỏ cho từng luồng xử lý."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Sử dụng luồng ta có thể thực thi song song các công việc 1 lúc một cách thực sự."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Sử dụng thread sẽ làm cho chương trình chạy một cách trơn chu hơn, nhanh hơn chứ ko phải đợi chờ lâu."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Bên cạnh đó ta cũng gặp một số vấn đề về việc xảy ra deadlock khi có nhiều luồng cùng sử dụng 1 tài nguyên cố định. Hoặc thay đổi tài nguyên đó một cách không có kiểm soát sẽ dẫn đến sai lệch kết quả."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- Khi đã lấy được token, thread phụ đó dùng phương thức sendMessage() để ghi dữ liệu vào token và gắn nó vào message queue của Handler."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Handler handler = new Handler()\n
+    String data = “Messages 1”\n
+    Message msg = handler.obtainMessage(1, (String)data);\n
+    handler.sendMessage(msg);"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Handler liên tục xử lý các message mới được gửi tới thread chính bằng phương thức handleMessage()"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Mỗi message được lấy ra từ queue của thread có thể trả về dữ liệu cho thread chính hoặc yêu cầu chạy các đối tượng runnable qua phương thức post()."
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Lợi ích của Multi-threading:"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="●Tăng hiệu suất ứng dụng bằng cách thực hiện các tác vụ đồng thời."
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="●Đảm bảo giao diện người dùng mượt mà, không bị gián đoạn."
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="●Tận dụng tốt tài nguyên phần cứng, đặc biệt trên thiết bị đa nhân."
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+
+    </LinearLayout>
+
+</ScrollView>
