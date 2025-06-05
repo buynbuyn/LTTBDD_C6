@@ -1,17 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textBr"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mức pin sẽ hiển thị ở đây"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tiêu đề hướng dẫn -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tạo một lớp BroadcastReceiver"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:padding="8dp"/>
+
+        <!-- Mã Java của BroadcastReceiver -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="public class Broad extends BroadcastReceiver {
+@Override
+public void onReceive(Context context, Intent intent) {
+    String action = intent.getAction();
+    if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
+        Toast.makeText(context, \Pin đang thay đổi!\, Toast.LENGTH_SHORT).show();
+        }
+        }
+        }"
+        android:textSize="14sp"
+        android:padding="8dp"
+        android:textColor="#000000"/>
+
+        <!-- Đăng ký BroadcastReceiver -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký BroadcastReceiver"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="batteryReceiver = new BatteryReceiver();
+IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+requireActivity().registerReceiver(batteryReceiver, filter);"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:textColor="#000000"/>
+
+        <!-- Hủy đăng ký BroadcastReceiver -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy đăng ký"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="requireActivity().unregisterReceiver(batteryReceiver);"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:textColor="#000000"/>
+
+        <!-- Hiển thị mức pin -->
+        <TextView
+            android:id="@+id/textBr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mức pin sẽ hiển thị ở đây"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
