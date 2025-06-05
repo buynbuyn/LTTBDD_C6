@@ -1,33 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="200dp">
+    android:layout_marginTop="16dp">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/edt_data_intent"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập dữ liệu Service" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <Button
-            android:id="@+id/btn_start_intent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Service"
-            android:layout_marginTop="10dp" />
+            <!-- Nội dung lý thuyết Android Service -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3 Android Service"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000" />
 
-        <Button
-            android:id="@+id/btn_stop_intent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stop Service"
-            android:layout_marginTop="10dp" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.1 Định nghĩa:\nService là thành phần xử lý tác vụ nền không có giao diện. Có thể start hoặc bind và vẫn chạy khi chuyển app."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.2 Phân loại:\n• Foreground Service: có thông báo, chạy liên tục.\n• Background Service: chạy ngầm, dễ bị kill.\n• Bound Service: ràng buộc và tương tác 2 chiều."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.3 Độ ưu tiên:\nBound > Foreground > Background. Background Service dễ bị kill khi thiếu RAM."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.4 onStartCommand():\n• START_NOT_STICKY: không khởi động lại.\n• START_STICKY: khởi động lại với intent null.\n• START_REDELIVER_INTENT: khởi động lại với intent cũ."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.5 Vòng đời:\n• onCreate()\n• onStartCommand()\n• onBind()\n• onDestroy()"
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.6 Foreground Service:\nYêu cầu hiển thị Notification, dùng startForeground()."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.7 IntentService:\nChạy tuần tự trên thread riêng. Không tương tác trực tiếp với UI. Dùng cho tác vụ đơn giản."
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.3.8 Manifest:\nPhải khai báo Service trong AndroidManifest.xml. Nếu chia sẻ cho app khác thì thêm: android:exported='true'"
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp" />
+
+            <!-- Ô nhập dữ liệu -->
+            <EditText
+                android:id="@+id/edt_data_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập dữ liệu Service" />
+
+            <!-- Nút Start -->
+            <Button
+                android:id="@+id/btn_start_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Service"
+                android:layout_marginTop="10dp" />
+
+            <!-- Nút Stop -->
+            <Button
+                android:id="@+id/btn_stop_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Service"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

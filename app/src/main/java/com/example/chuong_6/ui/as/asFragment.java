@@ -24,7 +24,7 @@ public class asFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        // Khởi tạo ViewModel nếu bạn dùng
+
         asViewModel asViewModel =
                 new ViewModelProvider(this).get(asViewModel.class);
 
