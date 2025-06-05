@@ -5,14 +5,17 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class intentViewModel extends ViewModel {
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> text = new MutableLiveData<>();
 
     public intentViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        text.setValue("Waiting for intent data...");
     }
 
     public LiveData<String> getText() {
-        return mText;
+        return text;
+    }
+
+    public void setText(String newText) {
+        text.setValue(newText);
     }
 }
